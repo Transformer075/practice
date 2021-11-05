@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">sample-practice</string>
-    <string name="enter_your_name">enter</string>
+
+    <string name="Enter_Name">Enter your Name</string>
 </resources>
