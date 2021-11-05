@@ -9,13 +9,40 @@
     <TextView
         android:id="@+id/txtview1"
         android:layout_width="97dp"
-        android:layout_height="56dp"
-        android:textAlignment="center"
-        android:paddingVertical="20dp"
+        android:layout_height="0dp"
         android:layout_marginTop="147dp"
+        android:layout_marginBottom="45dp"
+        android:paddingVertical="20dp"
         android:text="TextView"
 
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="438dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtview1" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
