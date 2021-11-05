@@ -2,6 +2,7 @@ package com.example.sample_practice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,4 +48,9 @@ public class MainActivity extends AppCompatActivity {
             switch1.setText("Off");
     }
 
+    public void nextActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        intent.putExtra("key", textView1.getText().toString());
+        startActivity(intent);
+    }
 }
