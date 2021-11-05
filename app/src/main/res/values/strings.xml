@@ -2,4 +2,7 @@
     <string name="app_name">sample-practice</string>
 
     <string name="Enter_Name">Enter your Name</string>
+    <string name="checkbox1">Show it</string>
+    <string name="switch1">Pending</string>
+    <string name="switch2">Not Pending</string>
 </resources>
