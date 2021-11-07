@@ -6,4 +6,5 @@
     <string name="switch1">Pending</string>
     <string name="switch2">Not Pending</string>
     <string name="next">Next Activity</string>
+    <string name="send_activity">Send</string>
 </resources>

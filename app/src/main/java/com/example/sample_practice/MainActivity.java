@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView2;
     CheckBox checkBox1;
     Switch switch1;
+    Button btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.name);
         textView2 = findViewById(R.id.result);
         btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.buttonSend);
         checkBox1 = findViewById(R.id.checkbox1);
         switch1 = findViewById(R.id.switch1);
 
@@ -36,6 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                     textView2.setText("Checkbox not checked");
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = textView1.getText().toString();
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(intent);
             }
         });
 

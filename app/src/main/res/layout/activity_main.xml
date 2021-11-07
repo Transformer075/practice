@@ -50,13 +50,13 @@
         android:text="@string/next" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonSend"
         android:layout_width="236dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="95dp"
         android:layout_marginTop="30dp"
         android:drawableLeft="@android:drawable/btn_star_big_on"
-        android:text="Button" />
+        android:text="@string/send_activity" />
 
     <CheckBox
         android:id="@+id/checkbox1"
