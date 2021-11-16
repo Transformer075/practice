@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBox1;
     Switch switch1;
     Button btn2;
+    //String[] ary = getResources().getStringArray(R.array.ary);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.buttonSend);
         checkBox1 = findViewById(R.id.checkbox1);
         switch1 = findViewById(R.id.switch1);
+        //textView1.setText(ary[1]);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
