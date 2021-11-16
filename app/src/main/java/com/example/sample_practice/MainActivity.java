@@ -2,6 +2,8 @@ package com.example.sample_practice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBox1;
     Switch switch1;
     Button btn2;
+
+    String[] colors = {"Green, Red, Yellow"};
+    ArrayList<Integer> selectedItems = new ArrayList();
     //String[] ary = getResources().getStringArray(R.array.ary);
 
     @Override
@@ -54,6 +62,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select multiple colors");
+        builder.setMultiChoiceItems(colors, null, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                if(isChecked)
+                    selectedItems.add(which);
+                else if(selectedItems.contains(which))
+                    selectedItems.remove(Integer.valueOf(which));
+            }
+        });
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String msg = "";
+                for(int i=0; i< selectedItems.size(); i++){
+                    msg = msg + "\n" + (i+1) + ": " + colors[selectedItems.get(i)];
+                }
+                Toast.makeText(MainActivity.this, "Total: "+ selectedItems.size() + " Items Selected.\n"+
+                        msg, Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "No option Selected", Toast.LENGTH_SHORT).show();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
     public void switchClicked(View view){
         if(switch1.isChecked()) {
@@ -68,4 +109,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("key", textView1.getText().toString());
         startActivity(intent);
     }
+
+
 }
