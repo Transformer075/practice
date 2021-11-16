@@ -60,19 +60,19 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
-        builder.setTitle("Quit");
-        builder.setMessage("Are you sure you want to quit App?");
+        builder.setTitle("Continue");
+        builder.setMessage("Do you want to Continue?");
         builder.setCancelable(false);
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
+                dialog.cancel();
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+                finish();
             }
         });
         AlertDialog alertDialog = builder.create();
