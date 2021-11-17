@@ -3,12 +3,11 @@ package com.example.sample_practice;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.app.Notification;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +20,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView textView2;
     Button button;
     Button toastButton;
-
+    Button btn_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         textView1 = findViewById(R.id.txtview1);
+        btn_next = findViewById(R.id.btn_nextt);
 
         Intent intent = getIntent();
         textView1.setText(intent.getStringExtra("key"));
@@ -49,6 +49,14 @@ public class MainActivity2 extends AppCompatActivity {
 
             }
         });
+//        btn_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("T2", "onClick: btn_next");
+//                Intent intent = new Intent(MainActivity2.this, ToDo_Activity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         Toast toast = Toast.makeText(this, "Hello, I am Haseeb", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.RIGHT, 100,10);
@@ -78,5 +86,11 @@ public class MainActivity2 extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
+    }
+
+    public void Todo(View v){
+        Log.d("T3", "Todo: ");
+        Intent intent= new Intent(MainActivity2.this,ToDo_Activity.class);
+        startActivity(intent);
     }
 }

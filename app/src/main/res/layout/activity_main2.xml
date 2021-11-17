@@ -63,4 +63,15 @@
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toTopOf="@+id/button3" />
 
+    <Button
+        android:id="@+id/btn_nextt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="20dp"
+        android:onClick="Todo"
+        android:text="ToDo Activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quit_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
